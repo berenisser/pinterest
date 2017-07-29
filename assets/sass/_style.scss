@@ -66,7 +66,6 @@
 	margin: 0;
 	.botones{
 		display: inline-block;
-		
 		p{
 			background-color: rgba(150,110,75,0.8);
 			color: #fff;
@@ -82,13 +81,24 @@
 			border-radius: 6px;
 		}
 	}
-	@for $i from 1 through 8{
+	@for $i from 1 through 9{
 		.botones-#{$i}{
 			border-radius: 6px;
 			background-image: url(../img/#{$i}.jpg);
 			background-size:cover;
 			background-position: center;
-			margin: 0 10px;
+			margin: 0 5px;
+		}
+	}
+}
+
+.imagenes{
+	display: inline-block;
+	.post{
+		display: inline-block;
+		width: 25%;
+		img{
+			width: 100%;
 		}
 	}
 }
