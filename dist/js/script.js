@@ -10291,46 +10291,28 @@ $(document).ready(function() {
 			'</div>');
 
 		$("#"+elem.id).click(function(){
-			console.log("Hola?");
-				$('.modal').show();
-				$('.modal').empty();
-				$('#imagenes').append('<div class="modal">'+
-					'<div class="cuadro-blanco">'+
-						'<div class="contenedor-save">'+
-							'<li><a href="#"><i class="fa fa-upload fa-lg" aria-hidden="true"></i></a></li>'+
-							'<li><a href="#"><i class="fa fa-check fa-lg" aria-hidden="true"></i></a></li>'+
-							'<li><a href="#"><i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i></a></li>'+
-							'<li class="right"><a href="#"><i class="fa fa-thumb-tack fa-lg" aria-hidden="true"></i> Save</a></li>'+
-						'</div>'+
-						'<h2>'+elem.title+'</h2>'+
-						'<img src="dist/img/'+ elem.id +'.jpg" alt="">'+
-						'<h3>'+ elem.user +'</h3>'+
-						'<p>'+ elem.description +'</p>'+
+			$('.modal').show();
+			$('.modal').empty();
+			$('#imagenes').append('<div class="modal">'+
+				'<div class="close">'+
+					'<i class="fa fa-times" aria-hidden="true"></i>'+
+				'</div>'+
+				'<div class="cuadro-blanco">'+
+					'<div class="contenedor-save">'+
+						'<li><a href="#"><i class="fa fa-upload fa-lg" aria-hidden="true"></i></a></li>'+
+						'<li><a href="#"><i class="fa fa-check fa-lg" aria-hidden="true"></i></a></li>'+
+						'<li><a href="#"><i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i></a></li>'+
+						'<li class="right"><a href="#"><i class="fa fa-thumb-tack fa-lg" aria-hidden="true"></i> Save</a></li>'+
 					'</div>'+
-				'</div>');
+					'<h2>'+elem.title+'</h2>'+
+					'<img src="dist/img/'+ elem.id +'.jpg" alt="">'+
+					'<h3>'+ elem.user +'</h3>'+
+					'<p>'+ elem.description +'</p>'+
+				'</div>'+
+			'</div>');
+			$('.close').click(function(){
+				$('.modal').hide();
 			})
+		})
 	})
-
-	function crearModal(elem){
-		
-			$("#"+elem.id).on('click', function(){
-				$('.modal').removeClass('hide');
-				$('.modal').empty();
-				$('.modal').append('<div class="modal hide">'+
-					'<div class="cuadro-blanco">'+
-						'<div class="contenedor-save">'+
-							'<li><a href="#"><i class="fa fa-upload fa-lg" aria-hidden="true"></i></a></li>'+
-							'<li><a href="#"><i class="fa fa-check fa-lg" aria-hidden="true"></i></a></li>'+
-							'<li><a href="#"><i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i></a></li>'+
-							'<li class="right"><a href="#"><i class="fa fa-thumb-tack fa-lg" aria-hidden="true"></i> Save</a></li>'+
-						'</div>'+
-						'<h2>'+elem.title+'</h2>'+
-						'<img src="dist/img/'+ elem.id +'.jpg" alt="">'+
-						'<h3>'+ elem.user +'</h3>'+
-						'<p>'+ elem.description +'</p>'+
-					'</div>'+
-				'</div>');
-			})
-		
-	}
 });

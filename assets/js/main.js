@@ -39,6 +39,9 @@ $(document).ready(function() {
 			$('.modal').show();
 			$('.modal').empty();
 			$('#imagenes').append('<div class="modal">'+
+				'<div class="close">'+
+					'<i class="fa fa-times fa-2x" aria-hidden="true"></i>'+
+				'</div>'+
 				'<div class="cuadro-blanco">'+
 					'<div class="contenedor-save">'+
 						'<li><a href="#"><i class="fa fa-upload fa-lg" aria-hidden="true"></i></a></li>'+
@@ -52,6 +55,9 @@ $(document).ready(function() {
 					'<p>'+ elem.description +'</p>'+
 				'</div>'+
 			'</div>');
+			$('.close').click(function(){
+				$('.modal').hide();
+			})
 		})
 	})
 });

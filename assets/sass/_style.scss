@@ -103,7 +103,7 @@ header{
 	.post{
 		display: inline-block;
 		width: 23%;
-		margin: 1% 1% 2.5% 1%;
+		margin: 1% 1% 5% 1%;
 		float: left;
 		cursor: pointer;
 		img{
@@ -129,6 +129,7 @@ header{
 		top: 20px;
 		right: 20px;
 		cursor: pointer;
+		z-index: 500;
 	}
 	.cuadro-blanco{
 		background-color: $white;
@@ -161,7 +162,4 @@ header{
 			max-width: 100%;
 		}
 	}
-}
-.hide{
-	display: none;
 }
