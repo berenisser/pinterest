@@ -2,6 +2,7 @@ $(document).ready(function() {
 	$('.modal').hide();
 	var firstHalf = info.slice(0, 20);
 	var secondHalf = info.slice(20, 41);
+	var counter = 0;
 
 	firstHalf.forEach(function(elem){
 		contenidoYModal(elem);
@@ -30,8 +31,9 @@ $(document).ready(function() {
 			'<div class="views">'+
 				'<span> <i class="fa fa-thumb-tack" aria-hidden="true"></i> 36,6k <i class="fa fa-check" aria-hidden="true"> '+elem.id*7+'</i></span>'+
 			'</div>'+
-			
 			'</div>');
+
+		counter++;
 
 		$("#"+elem.id).click(function(){
 			$('.modal').show();
@@ -50,11 +52,11 @@ $(document).ready(function() {
 						'<h2>'+elem.title+'</h2>'+
 						'<img src="dist/img/'+ elem.id +'.jpg" alt="">'+
 					'<div class="contenedor-texto">'+
-					'<a class="readIt" href="#">Read it</a>'+	
+						
 						'<div class="circulo-color2"><span class="usuario-circulo2">'+elem.username.charAt(0).toUpperCase()+'</span></div>'+
 						
 						'<span>'+ elem.user +'</span>'+
-						'<p class="hashtag2"> #'+elem.hashtag+'</p>'+
+						'<p class="hashtag2"> #'+elem.hashtag+'</p>'+	
 						'<div class="modal-descrip"><p>'+ elem.description +'</p></div>'+
 					'</div>'+	
 				'</div>'+
@@ -70,16 +72,15 @@ $(document).ready(function() {
 	$(window).scroll(function() {   
     	if($(window).scrollTop() + $(window).height() == $(document).height()) {
         	$('.loading').show();
-        	/*secondHalf.forEach(function(elem){
-				contenidoYModal(elem);
-			})*/
-
-			$.each(secondHalf, function(i, item){
-				console.log(i);
-				console.log(item);
-				contenidoYModal(item);
-				return i>20;
-			})
+			console.log(counter);
+			if(counter==20){
+				secondHalf.forEach(function(elem){
+					contenidoYModal(elem);
+				})
+			} else{
+				$('.loading').hide();
+				return false;
+			}
 			$('.loading').hide();
     	}
 	});
