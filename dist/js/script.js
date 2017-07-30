@@ -10327,15 +10327,6 @@ $(document).ready(function() {
 	$(window).scroll(function() {   
     	if($(window).scrollTop() + $(window).height() == $(document).height()) {
         	$('.loading').show();
-        	/*secondHalf.forEach(function(elem){
-				contenidoYModal(elem);
-			})
-			
-			$.each(secondHalf, function(elem){
-					contenidoYModal(elem);	
-				})
-			
-			*/
 			console.log(counter);
 			if(counter==20){
 				secondHalf.forEach(function(elem){
@@ -10345,10 +10336,6 @@ $(document).ready(function() {
 				$('.loading').hide();
 				return false;
 			}
-
-			 
-			
-
 			$('.loading').hide();
     	}
 	});

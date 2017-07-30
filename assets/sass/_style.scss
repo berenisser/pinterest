@@ -2,6 +2,7 @@
 *{
 	margin: 0;
 	padding: 0;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 header{
 	position: fixed;
@@ -100,12 +101,24 @@ header{
 .imagenes{
 	display: inline-block;
 	padding: 0 80px;
-	margin-top: 150px;	 
+	margin-top: 150px;	
+	
+	-moz-column-width: 220px;
+	-webkit-column-width: 220px;
+	column-width: 220px;
+
+	-moz-column-count: 4;
+	-webkit-column-count: 4;
+	column-count: 4;
+
+	-moz-column-gap: 20px;
+	-webkit-column-gap: 20px;
+	column-gap: 20px;
+
 	.post{
 		display: inline-block;
-		width: 23%;
-		margin: 1% 1% 2% 1%;
 		cursor: pointer;
+		margin-bottom: 20px;
 		.text{
 			float: left;
 			width: 70%;
